@@ -1,0 +1,196 @@
+body {
+  position: relative;
+  background-color: rgb(128, 169, 87);
+  --btn-size: 22%;
+  --img-filter: 0;
+}
+button:hover {
+  opacity: 0.8;
+}
+
+.screen {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+#start_screen {
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.528);
+  color: white;
+  font-size: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#end_screen {
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.528);
+  color: white;
+  font-size: bold;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.screen button {
+  width: 70vw;
+  height: 10vh;
+  font-size: 8vh;
+  font-weight: bold;
+  border-radius: 6vw;
+  border: 0.2rem solid black;
+}
+.screen img{
+  max-width: 70vw;
+}
+
+#btn_container{
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#btn_container button{
+  width: 40vw;
+  height: 16vh;
+  font-size: 4vh;
+}
+
+#Easy {
+  background-color: green;
+}
+#Normal {
+  background-color: blue;
+}
+#Hard {
+  background-color: rgb(255, 0, 0);
+}
+#Easy_Challenge {
+  background-color: green;
+}
+#Normal_Challenge {
+  background-color: blue;
+}
+#Hard_Challenge {
+  background-color: rgb(255, 0, 0);
+}
+
+
+p {
+  margin: 10vh;
+  color: rgb(255, 255, 255);
+  font-size: 5vh;
+}
+
+#board {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#board button {
+  width: var(--btn-size);
+  height: var(--btn-size);
+  margin: .5%;
+  border: 5px solid gold;
+  border-radius: 10px;
+}
+
+.hidden {
+  background-color: rgb(227, 140, 26);
+  animation-name: hide;
+  animation-duration: 0.5s;
+}
+@keyframes hide {
+  0% {
+    height: var(--btn-size);
+  }
+  50% {
+    height: 0%;
+  }
+  100% {
+    height: var(--btn-size);
+  }
+}
+
+.revealed {
+  background-color: beige;
+  animation-name: reveal;
+  animation-duration: 0.5s;
+}
+@keyframes reveal {
+  0% {
+    height: var(--btn-size);
+  }
+  50% {
+    height: 0%;
+  }
+  100% {
+    height: var(--btn-size);
+  }
+}
+
+.switching_red {
+  animation-duration: 0.5s;
+  animation-name: blink_red;
+  animation-iteration-count: infinite;
+}
+
+.switching_blue {
+  animation-duration: 1s;
+  animation-name: blink_blue;
+  animation-iteration-count: infinite;
+}
+@keyframes blink_blue {
+  0% {
+    background-color: rgb(227, 140, 26);
+  }
+  50% {
+    background-color: rgb(26, 33, 227);
+  }
+  100% {
+    background-color: rgb(227, 140, 26);
+  }
+}
+@keyframes blink_red {
+  0% {
+    background-color: rgb(227, 140, 26);
+  }
+  50% {
+    background-color: rgb(227, 66, 26);
+  }
+  100% {
+    background-color: rgb(227, 140, 26);
+  }
+}
+.hidden img {
+  display: none;
+}
+.switching_blue img {
+  display: none;
+}
+.switching_red img {
+  display: none;
+}
+
+.revealed img {
+  display: inline;
+  margin: 0;
+  height: 90%;
+  filter: invert(var(--img-filter));
+}

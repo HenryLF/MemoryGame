@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="start_screen" class="screen">
+      <img src="./img/Memory.png" />
+      <div id="btn_container">
+        <div>
+          <button id="Easy" class="normal">Easy (4x4)</button>
+          <button id="Easy_Challenge" class="challenge">Challenge (4x4)</button>
+        </div>
+        <div>
+          <button id="Normal" class="normal">Normal (6x6)</button>
+          <button id="Normal_Challenge" class="challenge">Challenge (6x6)</button>
+        </div>
+        <div>
+          <button id="Hard" class="normal">Hard (8x8)</button>
+          <button id="Hard_Challenge" class="challenge">Challenge (8x8)</button>
+        </div>
+      </div>
+    </div>
+    <div id="end_screen" class="screen">
+      <img src="./img/WellDone.png" />
+      <p>Game finished in <span id="Time"></span> s.</p>
+      <button id="Reset" class="screen_button">Ok !</button>
+    </div>
+    <div id="board"></div>
+    <div id="shadow" class="screen"></div>
+    <script src="./cards.js"></script>
+    <script src="./game.js"></script>
+  </body>
+</html>
